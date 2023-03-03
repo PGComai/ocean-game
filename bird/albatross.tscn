@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://albatross.glb" type="PackedScene" id=1]
+[ext_resource path="res://albatross.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Path3D/PathFollow3D/LWingHandle:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PackedFloat32Array( -5.1, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Path3D/PathFollow3D/LWingHandle:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PackedFloat32Array( 1.2, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Path3D/PathFollow3D/LWingHandle:rotation_degrees:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PackedFloat32Array( -16.435, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Path3D/PathFollow3D/LWingHandle:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PackedFloat32Array( -3.2, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "flap"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Path3D/PathFollow3D/LWingHandle:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PackedFloat32Array(  ),
+"times": PackedFloat32Array(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Path3D/PathFollow3D/LWingHandle:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PackedFloat32Array(  ),
+"times": PackedFloat32Array(  )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Path3D/PathFollow3D/LWingHandle:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PackedFloat32Array(  ),
+"times": PackedFloat32Array(  )
+}
+
+[sub_resource type="Curve3D" id=3]
+_data = {
+"points": PackedVector3Array( 0, 0, 0, 0, 0, 0, -5.81578, 0.1037, 0, 0, 0, 0, 0, 0, 0, -3.91269, 2.42309, 0, 0, 0, 0, 0, 0, 0, -4.88802, 3.22001, 0, 0, 0, 0, 0, 0, 0, -6.25587, 0.853042, 0, 0, 0, 0, 0, 0, 0, -6.49376, -1.07384, 0, 0, 0, 0, 0, 0, 0, -5.89904, -2.14432, 0, 0, 0, 0, 0, 0, 0, -5.81578, 0.1037, 0 ),
+"tilts": PackedFloat32Array( 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="albatross" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="SkeletonIKL" type="SkeletonIK3D" parent="Armature/Skeleton3D" index="1"]
+process_priority = 1
+root_bone = "wing1.L"
+tip_bone = "wing3.L"
+use_magnet = true
+magnet = Vector3( -10, 20, 0 )
+target_node = NodePath("../../../Path3D/PathFollow3D/LWingHandle/LWingTarget")
+
+[node name="SkeletonIKR" type="SkeletonIK3D" parent="Armature/Skeleton3D" index="2"]
+process_priority = 1
+root_bone = "wing1.R"
+tip_bone = "wing3.R"
+use_magnet = true
+magnet = Vector3( 0, 20, 0 )
+target_node = NodePath("../../../RWingHandle/RWingTarget")
+
+[node name="RWingHandle" type="Marker3D" parent="." index="1"]
+transform = Transform3D( 0.964888, 0.135606, -0.224951, -0.139173, 0.990268, 0, 0.222762, 0.0313071, 0.97437, 5.8, 0, -3.2 )
+
+[node name="RWingTarget" type="Marker3D" parent="RWingHandle" index="0"]
+transform = Transform3D( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, -4.76837e-07, -2.38419e-07, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+anims/RESET = SubResource( 1 )
+anims/flap = SubResource( 2 )
+
+[node name="Path3D" type="Path3D" parent="." index="3"]
+curve = SubResource( 3 )
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" index="0"]
+transform = Transform3D( 0.993968, 0.109676, 0, -0.109676, 0.993968, 0, 0, 0, 1, -5.81578, 0.1037, 0 )
+rotation_mode = 0
+
+[node name="LWingHandle" type="Marker3D" parent="Path3D/PathFollow3D" index="0"]
+transform = Transform3D( 0.957058, 0.25657, 0.134947, -0.278307, 0.943479, 0.179978, -0.0811431, -0.209806, 0.97437, -5.1, 1.2, -3.2 )
+
+[node name="LWingTarget" type="Marker3D" parent="Path3D/PathFollow3D/LWingHandle" index="0"]
+transform = Transform3D( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, -2.38419e-07, 0 )

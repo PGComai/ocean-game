@@ -1,0 +1,10 @@
+[gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://ucp32ylkc5wd"]
+
+[ext_resource type="FastNoiseLite" uid="uid://b5ruauol2pe1f" path="res://noise/water-noise-default.tres" id="1_f73f8"]
+
+[resource]
+width = 2048
+height = 2048
+seamless = true
+as_normal_map = true
+noise = ExtResource("1_f73f8")

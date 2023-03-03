@@ -1,0 +1,16 @@
+[gd_resource type="PlaneMesh" load_steps=3 format=3 uid="uid://odmacgeu2c8d"]
+
+[ext_resource type="Shader" uid="uid://ct7oldpscu7w6" path="res://water-shader.tres" id="1_28bh5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6mqsc"]
+render_priority = 0
+shader = ExtResource("1_28bh5")
+shader_parameter/wavevertexmult = 10.0
+shader_parameter/wave_speed_multiplier2 = 1.0
+shader_parameter/colorofwater = null
+
+[resource]
+material = SubResource("ShaderMaterial_6mqsc")
+size = Vector2(1000, 1000)
+subdivide_width = 80
+subdivide_depth = 80

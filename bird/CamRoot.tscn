@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://eyes.gd" type="Script" id=1]
+
+[node name="CamRoot" type="Node3D"]
+script = ExtResource( 1 )
+
+[node name="h" type="Node3D" parent="."]
+
+[node name="v" type="Node3D" parent="h"]
+
+[node name="Camera3D" type="Camera3D" parent="h/v"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17882, 23.2461 )
+far = 8192.0
+margin = 9.56
+process_mode = 1
