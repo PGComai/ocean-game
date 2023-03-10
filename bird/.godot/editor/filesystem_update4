@@ -1,6 +1,8 @@
-res://noise/water-noise-default.tres
+res://noise/cloud-height-noise.tres
 res://default_env.tres
 res://overcast ocean.tscn
+res://noise/water-noise-default.tres
 res://noise/water-normal.tres
-res://water-shader.tres
 res://noise/water-noise-2.tres
+res://water-shader.tres
+res://cloud-bottom.tres

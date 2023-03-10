@@ -3,8 +3,8 @@
 [ext_resource type="FastNoiseLite" uid="uid://b5ruauol2pe1f" path="res://noise/water-noise-default.tres" id="1_f73f8"]
 
 [resource]
-width = 2048
-height = 2048
+width = 1024
+height = 1024
 seamless = true
 as_normal_map = true
 noise = ExtResource("1_f73f8")

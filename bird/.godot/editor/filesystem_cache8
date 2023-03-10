@@ -1,28 +1,31 @@
 2a60927148abd1d33b818b535e306557
-::res://::1677867634
+::res://::1678299736
 albatross.gd::GDScript::-1::1677719102::0::1::::<>Node3D<>::
 albatross.glb::PackedScene::7326237908696116283::1672189695::1677719262::1::::<><>::
 albatross.tscn::PackedScene::-1::1677719102::0::1::::<><>::res://albatross.glb<>res://albatross.gd
 CamRoot.tscn::PackedScene::-1::1677719102::0::1::::<><>::res://eyes.gd
-default_env.tres::Environment::1428727903405095350::1677727589::0::1::::<><>::
+cloud-bottom.tres::VisualShader::6035802430483616788::1677959959::0::1::::<><>::uid://b3hxioiyn5ec2
+default_env.tres::Environment::1428727903405095350::1677959959::0::1::::<><>::
 environment.gd::GDScript::-1::1677719102::0::1::::<>WorldEnvironment<>::
 eyes.gd::GDScript::-1::1677719102::0::1::::<>Node3D<>::
 fish.gd::GDScript::-1::1677719102::0::1::::<>CharacterBody3D<>::
 icon.png::CompressedTexture2D::4970385941957222159::1670633262::1677719260::1::::<><>::
 mediumwavenoise.tres::FastNoiseLite::-1::1677719102::0::1::::<><>::
 ocean library.tscn::PackedScene::-1::1677719102::0::1::::<><>::res://blank sky.tres<>res://ocean/overcast.tres
-overcast ocean.tscn::PackedScene::8046225227863790477::1677727589::0::1::::<><>::res://water light.gd<>res://CamRoot.tscn<>res://fish.gd<>uid://ct7oldpscu7w6<>res://proto-bird.tscn
+overcast ocean.tscn::PackedScene::8046225227863790477::1677959959::0::1::::<><>::res://water light.gd<>res://CamRoot.tscn<>res://fish.gd<>uid://ct7oldpscu7w6<>res://proto-bird.tscn<>uid://cr811wr0bvjgm
 overcast sky.tscn::PackedScene::-1::1677719102::0::1::::<><>::res://ocean/overcast.tres
 proto-bird.gd::GDScript::-1::1677719102::0::1::::<>Node3D<>::
 proto-bird.tscn::PackedScene::-1::1677719102::0::1::::<><>::res://proto-bird.gd<>res://albatross.tscn
 water light.gd::GDScript::-1::1677719102::0::1::::<>DirectionalLight3D<>::
-water-shader.tres::VisualShader::6173359347833865419::1677727589::0::1::::<><>::uid://ucp32ylkc5wd<>uid://b5ruauol2pe1f
+water-shader.tres::VisualShader::6173359347833865419::1677959075::0::1::::<><>::uid://ucp32ylkc5wd<>uid://b5ruauol2pe1f<>uid://bk02smww6sdyt
 water.tres::PlaneMesh::989565662632890117::1677727589::0::1::::<><>::uid://ct7oldpscu7w6
 waveheight.tres::NoiseTexture2D::-1::1677719102::0::1::::<><>::res://mediumwavenoise.tres
-::res://noise/::1677727589
+::res://noise/::1677959075
+cloud-height-noise.tres::FastNoiseLite::4367570475815637807::1677959075::0::1::::<><>::
 water-height.tres::NoiseTexture2D::3638524662587663640::1677722703::0::1::::<><>::
-water-noise-default.tres::FastNoiseLite::4528395827139148561::1677727589::0::1::::<><>::
-water-normal.tres::NoiseTexture2D::1408867841108628215::1677727589::0::1::::<><>::uid://b5ruauol2pe1f
+water-noise-2.tres::FastNoiseLite::3141590732327518351::1677959075::0::1::::<><>::
+water-noise-default.tres::FastNoiseLite::4528395827139148561::1677959075::0::1::::<><>::
+water-normal.tres::NoiseTexture2D::1408867841108628215::1677959075::0::1::::<><>::uid://b5ruauol2pe1f
 ::res://waves5/::1672027509
 ::res://waves5/waves5/::1677719261
 000.png::CompressedTexture2D::1198337688117151222::1672027509::1677719261::1::::<><>::
